@@ -1,0 +1,53 @@
+:root{color-scheme:dark;--bg:#0e1120;--surface:#161a2d;--ink:#eceef6;--muted:#9ba3ba;--body:#c6cbdc;--line:#262b42;--accent:#e58fb0;--accent-soft:#2b1d2e;--r:14px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15}
+.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px max(24px,calc((100% - 1040px)/2));background:rgba(14,17,32,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{font-family:Fraunces,serif;font-weight:600;font-size:1.15rem;text-decoration:none}
+.nav nav{display:flex;gap:26px}
+.nav nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted);padding:4px 0;border-bottom:2px solid transparent}
+.nav nav a:hover,.nav nav a.active{color:var(--ink);border-color:var(--accent)}
+.menu{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+main{max-width:1040px;margin:0 auto;padding:0 24px}
+.hero{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center;padding:72px 0 64px}
+.kicker{color:var(--accent);font-weight:600;margin-bottom:14px}
+h1{font-size:clamp(2.5rem,6vw,4.2rem);letter-spacing:-.02em;margin-bottom:20px}
+.lead{font-size:1.2rem;color:var(--muted);max-width:34em;margin-bottom:30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;transition:background .2s,color .2s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#22101a}
+.btn.primary:hover{background:#f2a9c4;border-color:#f2a9c4;color:#22101a}
+.photo{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 18%;border-radius:50%;border:3px solid var(--accent);box-shadow:0 0 0 10px var(--accent-soft)}
+.block{padding:56px 0;border-top:1px solid var(--line)}
+.block h2{font-size:2rem;margin-bottom:24px}
+.block>p{max-width:42em;margin-bottom:14px;color:var(--body)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px 40px}
+.skills h3,.timeline h3{font-family:Manrope,sans-serif;font-size:1rem;font-weight:700;margin-bottom:10px}
+.skills ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.skills li{background:var(--accent-soft);color:#f3c9db;padding:4px 12px;border-radius:999px;font-size:.88rem;font-weight:500}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.projects article{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column}
+.projects h3{font-size:1.45rem}
+.sub{color:var(--accent);font-weight:600;font-size:.92rem;margin:4px 0 14px}
+.projects p{color:var(--body)}
+.stack{font-size:.88rem;color:var(--muted)!important;margin:14px 0 18px}
+.projects article a{margin-top:auto;font-weight:700;color:var(--accent);text-underline-offset:4px}
+.timeline{border-left:2px solid var(--accent);padding-left:26px;display:grid;gap:24px;max-width:46em}
+.timeline p{color:var(--muted)}
+.contact ul{list-style:none;padding:0;display:grid;gap:10px;font-weight:600}
+.contact a{text-underline-offset:4px}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:32px 24px;border-top:1px solid var(--line)}
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:40px}
+  .photo{order:-1;max-width:200px;margin:0 10px}
+  .projects{grid-template-columns:1fr}
+  .menu{display:block}
+  .nav nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 24px}
+  .nav nav.open{display:flex}
+  .nav nav a{padding:12px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
